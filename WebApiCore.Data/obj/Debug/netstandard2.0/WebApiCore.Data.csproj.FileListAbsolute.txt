@@ -1,0 +1,9 @@
+C:\Projects\4WebApiCore4\WebApiCore.Data\bin\Debug\netstandard2.0\WebApiCore.Data.deps.json
+C:\Projects\4WebApiCore4\WebApiCore.Data\bin\Debug\netstandard2.0\WebApiCore.Data.dll
+C:\Projects\4WebApiCore4\WebApiCore.Data\bin\Debug\netstandard2.0\WebApiCore.Data.pdb
+C:\Projects\4WebApiCore4\WebApiCore.Data\obj\Debug\netstandard2.0\WebApiCore.Data.csprojAssemblyReference.cache
+C:\Projects\4WebApiCore4\WebApiCore.Data\obj\Debug\netstandard2.0\WebApiCore.Data.AssemblyInfoInputs.cache
+C:\Projects\4WebApiCore4\WebApiCore.Data\obj\Debug\netstandard2.0\WebApiCore.Data.AssemblyInfo.cs
+C:\Projects\4WebApiCore4\WebApiCore.Data\obj\Debug\netstandard2.0\WebApiCore.Data.csproj.CoreCompileInputs.cache
+C:\Projects\4WebApiCore4\WebApiCore.Data\obj\Debug\netstandard2.0\WebApiCore.Data.dll
+C:\Projects\4WebApiCore4\WebApiCore.Data\obj\Debug\netstandard2.0\WebApiCore.Data.pdb
