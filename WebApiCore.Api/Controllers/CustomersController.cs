@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.AspNetCore.Mvc;
 using WebApiCore.Data;
+using WebApiCore.Data.Repository;
 using WebApiCore.Data.Models;
 
 namespace WebApiCore.Api.Controllers
@@ -12,41 +13,44 @@ namespace WebApiCore.Api.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
-        private readonly WebApiCoreContext context;
+        public IRepository<Customer> contextCustomers { get; private set; }
 
-        public CustomersController(WebApiCoreContext context)
+        public CustomersController(IRepository<Customer> contextCustomers)
         {
-            this.context = context;
+            this.contextCustomers = contextCustomers;
         }
 
         [HttpGet]
         public IEnumerable<Customer> Get()
         {
-            return context.Customers.ToList();
+            // logger.LogInformation("getting all customers");
+            //throw new Exception("We need to do this...");
+            return contextCustomers.All;
         }
 
         [HttpGet("{id}")]
         public ActionResult<Customer> Get(int id)
         {
-            return new Customer{BirthDate = DateTime.Now, Email = "some@gmail.com", Name = "Name", Id = 0};
+            return contextCustomers.FindById(id);
         }
 
         [HttpPost]
         public void Post([FromQuery] Customer value)
         {
-
+            contextCustomers.Update(value);
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromQuery] Customer value)
+        public void Put(int id, [FromBody] Customer value)
         {
-            
+            contextCustomers.Add(value);
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-
+            var entity = contextCustomers.FindById(id);
+            contextCustomers.Delete(entity);
         }
     }
 }

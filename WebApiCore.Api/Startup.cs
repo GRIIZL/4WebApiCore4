@@ -11,7 +11,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using WebApiCore.Data;
+using WebApiCore.Data.Models;
+using WebApiCore.Data.Context;
+using WebApiCore.Data.Repository;
 
 namespace WebApiCore.Api
 {
@@ -33,6 +35,9 @@ namespace WebApiCore.Api
             // options.UseInMemoryDatabase("TestDatabase"));
             services.AddDbContext<WebApiCoreContext>(builder =>
                 builder.UseSqlServer(connectionString, b => b.MigrationsAssembly("WebApiCore.Api")));
+
+            services.AddScoped<IRepository<Customer>, CustomerRepository>();
+            services.AddScoped<IRepository<CurrentWeather>, WeatherRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

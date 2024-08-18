@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using WebApiCore.Data.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace WebApiCore.Data
+namespace WebApiCore.Data.Context
 {
     public class WebApiCoreContext: DbContext
     {
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<CurrentWeather> Orders { get; set; }
+        public DbSet<CurrentWeather> Weathers { get; set; }
 
         public WebApiCoreContext(DbContextOptions<WebApiCoreContext> options) : base(options)
         {
